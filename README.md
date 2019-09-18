@@ -1,4 +1,4 @@
-# myvuex
+# music-app
 
 ## Project setup
 ```

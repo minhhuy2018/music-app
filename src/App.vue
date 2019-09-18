@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-     <input type="text" class="myinput" v-model="todo" placeholder="请输入代办事项" v-on:keyup.enter="addTodo">
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -28,32 +27,3 @@
   }
 }
 </style>
-
-<script>
-export default {
-  data:function(){
-   return {
-
-
-
-     
-   }
-   
-  
-  },
-methods:{
-addTodo:function(){
- this.$store.commit('increment',{value:this.todo,comp:false})
- 
-
-}
-
-
-
-}
-
-
-
-
-}
-</script>

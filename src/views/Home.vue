@@ -1,37 +1,18 @@
 <template>
   <div class="home">
-     <ul>
-       <li v-for="(a,index) in allTodo " :key="index" :class="{'isActive':a.comp}">
-
-          <input type="checkbox" v-model="a.comp"> {{a.value}}
-
-
-
-       </li>
-     </ul>
-
-
-
+    <img alt="Vue logo" src="../assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-
-
+// @ is an alias to /src
+import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-computed:{
-allTodo:function(){
-  return this.$store.state.todos
+  name: 'home',
+  components: {
+    HelloWorld
+  }
 }
-
-}
-
-
-
-
-}
-
-
-
 </script>

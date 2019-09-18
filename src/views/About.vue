@@ -1,35 +1,5 @@
 <template>
   <div class="about">
-    <ul>
-      <li v-for="(a,index) in active">
-
-        <input type="checkbox" v-model="a.comp">
-          {{a.value}}
-
-      </li>
-    </ul>
-
+    <h1>This is an about page</h1>
   </div>
 </template>
-
-<script>
-export default {
-  data:function(){
-   return {
-
-
-   }
-
-  },
-  computed:function(){
-     active:function(){
-
-       return tihs.$store.getters.active
-     }
-
-
-  }
-
-
-}
-</script>
