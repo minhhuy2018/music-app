@@ -7,9 +7,18 @@
       <router-link to="/login">登录</router-link>
       
     </div>
+    
+    
     <router-view/>
   </div>
 </template>
 
+
+
 <style lang="scss">
+
+
+
+
+
 </style>
