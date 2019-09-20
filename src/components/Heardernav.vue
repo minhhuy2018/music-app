@@ -21,8 +21,12 @@
           <el-menu-item index="2-4-3">选项3</el-menu-item>
         </el-submenu>
       </el-submenu>
+      
       <el-menu-item index="3">
-        <a href="#" target="_blank" id="fri">好友圈</a>
+      
+      <div class="right" style="width:60px;">
+          <router-link to="/information" style="color: #6ed56c;font-size: 16px;line-height: 50px;">好友圈</router-link>
+        </div>  <!-- <a href="#" target="_blank" id="fri"><router-link to="/management">个人信息</router-link></a> -->
       </el-menu-item>
       <el-menu-item index="4">
         <a href="#" target="_blank">推荐</a>
@@ -33,14 +37,17 @@
         
       </div>
 
+ 
       <div class="right">
         <div class="serch">
           <el-input placeholder="搜索内容" v-model="input" :disabled="false" class="inp"></el-input>
         </div>
         <div class="upload">上传歌曲</div>
-
-        <div class="ava"></div>
-        <img src alt />
+        <div class="right" style="width:60px;">
+          <router-link to="/login" style="color: #6ed56c;font-size: 16px;line-height: 50px;">登录</router-link>
+        </div>
+        <!-- <div class="ava"></div>
+        <img src alt /> -->
       </div>
     </el-menu>
 
@@ -71,9 +78,9 @@ export default {
   padding: 0;
 }
 
-body{
-  background-color:  #d0d4df ;
-}
+/* body{ */
+  /* background-color:  #d0d4df ; */
+/* } */
 
 .myhearder {
   position: relative;
