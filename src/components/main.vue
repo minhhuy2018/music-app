@@ -2,10 +2,37 @@
      <div class="main clearfix_after ">
 
       <div class="main-left">
+          
+        <div class="expheard clearfix_after">
+         <a href="" class="expheard-box">
+          <div class="b1"></div>
+          <img src="http://qn-qn-echo-image-cdn.app-echo.com/FihFH8LDnuyoy3DT29RCoqQrRmwn?imageMogr2/auto-orient/quality/100|imageMogr2/thumbnail/!300x300r/gravity/Center/crop/300x300/dx/0/dy/0" alt="" class="pic">
+          <div class="text">
+             午后红茶
+         </div>
+         </a>
+        </div>
+
+ <!-- 今日推荐 -->
+        <div class="big-title">
+            <span class="f1">今日推荐</span>  
+            <i class="play-all rec" style="float:left">播放全部</i>
+
+           
+        </div>
+        <ul class="morelist clearfix_after">
+            <li class="expmore-box">
+                <div class="pic">
+
+                </div>
+            </li>
+        </ul>
 
     
       </div>
 
+
+<!-- 每日精选 -->
       <div class="main-right ">
        <h3>每日精选
            <i class="play-all">播放全部</i>
@@ -163,6 +190,88 @@ export default {
     margin-top: 6px;
     overflow: hidden
 }
+.expheard-box{
+    float: left;
+    position: relative;
+    width: 150px;
+    height: auto;
+    margin-right: 1px;
+    cursor: pointer
+}
+.b1{
+    width: 100%;
+    height: 150px;
+    background: url(http://www.app-echo.com/v/dist-prod/images/3a9a80e2b2ba3c32b05f81fa7990215e.jpg) no-repeat;
+}
+.pic{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px
+}
+.text{
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    padding: 11px 0;
+    transition: all .2s ease-in-out
+}
+
+.big-title{
+    display: block;
+    margin: 10px 9px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 24px;
+    color: #666;
+
+}
+.big-title>.f1{
+     float: left;
+    line-height: 28px;
+    font-size: 24px;
+    color: #666;
+}
+.rec{
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    color: #fff;
+    font-style: normal;
+    background-color: #6ed56c;
+    background-image: url(http://www.app-echo.com/v/dist-prod/images/b99faa6fcbf72a7ac2843043864e2236.png);
+    background-repeat: no-repeat;
+    background-position: 4px 4px;
+    border-radius: 14px;
+    padding: 0 10px;
+    margin-left: 24px;
+    vertical-align: bottom;
+    text-indent: 20px;
+    cursor: pointer
+}
+.expmore-box{
+    float: left;
+    width: 160px;
+    height: 284px;
+    background: #f4f4f4;
+    margin: 25px 9px 0;
+
+}
+.expmore-box .pic{
+    display: block;
+    position: relative;
+    height: 160px;
+}
+
+
+
+
 
 
 .clearfix_after{zoom:1;}

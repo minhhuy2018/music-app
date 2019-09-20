@@ -34,7 +34,6 @@
 
       <div class="logo">
          <a href="#" target="_blank"><img src="http://www.app-echo.com/v/dist-prod/images/2c35330d407d3f6edb9d09a4ce563da9.png" alt /></a>
-        
       </div>
 
  
@@ -42,12 +41,21 @@
         <div class="serch">
           <el-input placeholder="搜索内容" v-model="input" :disabled="false" class="inp"></el-input>
         </div>
-        <div class="upload">上传歌曲</div>
+       <el-row> <el-button type="success" round>上传作品</el-button></el-row>
+
         <div class="right" style="width:60px;">
-          <router-link to="/login" style="color: #6ed56c;font-size: 16px;line-height: 50px;">登录</router-link>
+          <router-link to="/login" style="color:rgb(49, 196, 49);font-size: 16px;line-height: 50px;">登录</router-link>
         </div>
         <!-- <div class="ava"></div>
         <img src alt /> -->
+
+
+
+        
+          
+       
+       
+
       </div>
     </el-menu>
 
@@ -78,9 +86,7 @@ export default {
   padding: 0;
 }
 
-/* body{ */
-  /* background-color:  #d0d4df ; */
-/* } */
+
 
 .myhearder {
   position: relative;
@@ -127,13 +133,7 @@ export default {
   line-height: 40px;
 }
 
-.ava{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color:pink;
 
-}
 
 .logo{
   width: 80px;
@@ -149,6 +149,10 @@ export default {
 .logo img{
   width: 100%;
   
+}
+
+.log{
+color:rgb(12, 197, 12);
 }
 </style>
 

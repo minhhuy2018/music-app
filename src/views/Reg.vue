@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <div class="myform">
+  <div class="log">
+      <div class="reg-img">
+        
+      </div>
+      <div class="myform">
       <el-form
         :model="ruleForm"
         :rules="rules"
@@ -8,14 +11,18 @@
         label-width="100px"
         class="demo-ruleForm"
       >
-        <el-form-item label="账号" prop="name">
-          <el-input v-model="ruleForm.name"></el-input>
+
+        
+
+        <el-form-item label="用户名" prop="name">
+          <el-input v-model="ruleForm.name" style="width:250px" ></el-input>
+
         </el-form-item>
         <el-form-item label="用户密码" prop="passW">
-          <el-input v-model="ruleForm.passW" type="password"></el-input>
+          <el-input v-model="ruleForm.passW" type="password" style="width:250px" ></el-input>
         </el-form-item>
         <el-form-item label="确认密码" prop="rePassW">
-          <el-input v-model="ruleForm.rePassW" type="password"></el-input>
+          <el-input v-model="ruleForm.rePassW" type="password" style="width:250px" ></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="submitForm('ruleForm')">立即注册</el-button>
@@ -23,6 +30,11 @@
         </el-form-item>
       </el-form>
     </div>
+
+
+   
+    
+ 
   </div>
 </template>
 
@@ -133,8 +145,31 @@ export default {
 
 <style>
 .myform {
-  width: 60%;
+  
+  width: 420px;
+  height: 300px;
+  margin: 60px 0;
+  display: inline-block;
+  
 
+
+}
+.reg-img{
+    display: inline-block;
+    width: 320px;
+    vertical-align:top;
+    margin-top:60px;
+    height: 300px;
+    background: url(http://www.app-echo.com/v/dist-prod/images/c31565a629ad4764aba1dfc9b7988f58.png) no-repeat;
+    background-size: contain;
+} 
+
+
+
+.log{
+  	width: 1000px;
+		background-color:white;
+		margin: 0 auto
 }
 
 </style>

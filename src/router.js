@@ -3,8 +3,8 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import reg from './views/Reg.vue'
 import login from './views/login'
-import information from './views/information'
-import Perfectinformation from './views/Perfectinformation'
+
+
 
 Vue.use(Router)
 
@@ -26,14 +26,7 @@ export default new Router({
       path: '/login',
       component: login
     },
-    {//个人信息
-      path: '/information',
-      component: information
-    },
-     {//个人信息
-      path: '/Perfectinformation',
-      component: Perfectinformation
-    },
+  
     {
       path: '/about',
     

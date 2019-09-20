@@ -81,7 +81,8 @@
 <style>
 .footer {
   height: auto;
-   background-color:  #d0d4df ;
+  background-color: #fff;
+ 
 }
 
 .footer1 {

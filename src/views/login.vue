@@ -1,21 +1,27 @@
 <template>
-<div class="myform">
-    <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-        <el-form-item label="账号" prop="name">
-            <el-input v-model="ruleForm.name"></el-input>
-        </el-form-item>
-        <el-form-item label="密码" prop="passW">
-            <el-input v-model="ruleForm.passW" type="password"></el-input>
-        </el-form-item>
-        <el-form-item>
-            <el-button type="primary" @click="submitForm()">登录</el-button>
-            <el-button @click="resetForm('ruleForm')">重置</el-button>
-        </el-form-item>
-    </el-form>
-    <div>
+	<div class="log">
+				<div class="myform">
+			<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+				<el-form-item label="用户名" prop="name">
+					<el-input v-model="ruleForm.name" style="width:250px" ></el-input>
+				</el-form-item>
+				<el-form-item label="用户密码" prop="passW">
+					<el-input v-model="ruleForm.passW" type="password" style="width:250px" ></el-input>
+				</el-form-item>
+
+				<el-form-item>
+					<el-button type="primary" @click="submitForm('ruleForm')">立即登录</el-button>
+					<el-button @click="resetForm('ruleForm')">重置</el-button>
+				</el-form-item>
+			</el-form>
+			<div style="text-align:center">
         还没有账号， <router-link to="/reg">去注册</router-link>
     </div>
-</div>
+		</div>
+		
+	</div>
+	
+
 </template>
 
 <script>
@@ -63,8 +69,21 @@ methods: {
 </script>
 
 <style>
-.myform {
-  width: 60%;
-  margin: 60px auto;
-}
+
+	.myform {
+		width: 50%;
+		margin: 60px 0;
+		
+
+	}
+	.log{
+		width: 1000px;
+		background-color:white;
+		margin: 30px auto;
+		
+
+
+	}
+	
+
 </style>

@@ -1,13 +1,25 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <!-- <router-link to="/reg">注册</router-link>
-      <router-link to="/login">登录</router-link> -->
-       <header-nav></header-nav>
-    </div>
+
     
+   
+  
+       
+       
+        <header-nav>
+       </header-nav>
+        
+        <router-view/>
+        
+       <my-footer>
+
+       </my-footer>
+      <!-- <my-main>
+
+      </my-main> -->
+
+ 
     
-    <router-view/>
   </div>
 </template>
 
@@ -17,6 +29,18 @@
 *{
   margin: 0px;
   padding: 0px;
+}
+body{
+  background-color: rgb(221, 217, 217);
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+input{
+  outline: none;
 }
 
 
