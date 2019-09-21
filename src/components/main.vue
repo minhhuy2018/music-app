@@ -6,7 +6,7 @@
         <div class="expheard clearfix_after">
          <a href="" class="expheard-box">
           <div class="b1"></div>
-          <img src="http://qn-qn-echo-image-cdn.app-echo.com/FihFH8LDnuyoy3DT29RCoqQrRmwn?imageMogr2/auto-orient/quality/100|imageMogr2/thumbnail/!300x300r/gravity/Center/crop/300x300/dx/0/dy/0" alt="" class="pic">
+          <img src="http://qn-qn-echo-image-cdn.app-echo.com/FihFH8LDnuyoy3DT29RCoqQrRmwn?imageMogr2/auto-orient/quality/100|imageMogr2/thumbnail/!300x300r/gravity/Center/crop/300x300/dx/0/dy/0" alt="" class="">
           <div class="text">
              午后红茶
          </div>
@@ -23,8 +23,25 @@
         <ul class="morelist clearfix_after">
             <li class="expmore-box">
                 <div class="pic">
-
                 </div>
+                 <a href="" class="song-name">aaaaa</a>
+                    <h4><a href="">aaaaa</a></h4>
+                    
+                    <ul class="status-list">
+                        <li>
+                            <i class="share"></i>
+                            <span>1</span>
+                        </li>
+                        <li>
+                            <i class="like"></i>
+                            <span>1</span>
+                        </li>
+                        <li>
+                             <i class="comment"></i>
+                            <span>1</span>
+                        </li>
+                    </ul>
+
             </li>
         </ul>
 
@@ -38,8 +55,8 @@
            <i class="play-all">播放全部</i>
        </h3>
        
-       <div class="exlistening clearfix_after ">
-         <a href="#">
+       <div class="exlistening clearfix_after " >
+         <a href="#" >
              <div class="pic">
                   <img src="" alt="" >
              </div>
@@ -74,7 +91,7 @@
 export default {
   data() {
     return {
-   
+      music:[],
     
     };
   },
@@ -84,7 +101,16 @@ export default {
   
  components :{
 
-}
+},
+created() {
+			this.axios.get("/everyday").then(res=>{
+                 console.log(res.data[0])
+				this.music=res.data;
+			}).catch(function(err){
+                console.log(err);
+
+            })
+		}
 
 }
 
@@ -203,7 +229,7 @@ export default {
     height: 150px;
     background: url(http://www.app-echo.com/v/dist-prod/images/3a9a80e2b2ba3c32b05f81fa7990215e.jpg) no-repeat;
 }
-.pic{
+.expheard-box img{
     display: none;
     position: absolute;
     top: 0;
@@ -268,8 +294,72 @@ export default {
     position: relative;
     height: 160px;
 }
+.song-name{
+     display: block;
+    margin: 12px 15px 0;
+    font-size: 14px;
+    line-height: 18px;
+    height: 36px;
+    color: #4a4a4a;
+    word-break: break-all;
+    overflow: hidden;
 
 
+}
+.expmore-box>h4{
+    margin: 15px 15px 0;
+    font-size: 12px;
+    line-height: 12px;
+    height: 14px;
+    color: #9b9b9b;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.expmore-box h4>a{
+    color: #6ed56c;
+    font-size: 14px;
+    margin-right: 5px;
+}
+.status-list{
+    display: block;
+    margin: 10px 5px 0;
+    height: auto;
+    line-height: 14px;
+}
+.status-list li{
+    display: inline-block;
+    width: 50px;
+    color: #6b6b6b;
+    text-align: center;
+    font-size: 12px;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.status-list li i{
+    background: url(http://www.app-echo.com/v/dist-prod/images/ae488640107567b16640846a2375beb3.png) 0 -23px no-repeat;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    vertical-align: top;
+}
+.status-list li span{
+    display: block;
+    margin-top: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.status-list li i.like{
+    background: url(http://www.app-echo.com/v/dist-prod/images/ae488640107567b16640846a2375beb3.png) -16px -23px no-repeat;
+
+}
+
+.status-list li i.comment{
+    background: url(http://www.app-echo.com/v/dist-prod/images/ae488640107567b16640846a2375beb3.png) -34px -23px no-repeat;
+
+}
 
 
 
