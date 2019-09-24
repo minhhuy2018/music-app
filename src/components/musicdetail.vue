@@ -1,7 +1,8 @@
 <template>
   <div class="main-center">
     <nav>
-      <a href class="back">返回</a>
+    <router-link to="/" class="back">返回</router-link>
+
     </nav>
 
     <div class="sound-title">
@@ -30,44 +31,13 @@
         <div class="timeline"></div>
       </div>
     </div>
-    <div class="infos clearfix_after">
+    <div class="infos clearfix_after" v-for="item in detail" :key="item.fid">
       <div class="lyrics">
         <h1>简介</h1>
         <p class="infos">
-          歌曲：xxx
-          <br />音乐人：xxx
-          <br />与君相逢 寒枝露正浓
-          心生欢喜 一眼印永恒
-          湖面秋风 廊前侧影
-          默契借着诗与歌
-          托起朗朗的心声
-          墨池有雨 我从书中来
-          红墙白雪 岁月满苍苔
-          一纸便签 牵我心怀
-          它从没向我飘来
-          直到你走向城外
-          几番霜 几番雨
-          长风里的诗 咏尘世的别离
-          岂能忘 无声对望的你
-          就算天地颠倒
-          未动摇 我等你
-          一程风 一程泥
-          长空洒下雨 湿了迢迢归期
-          常眺望 隔山隔海的你
-          就算岁月无常
-          未动摇 我等你
-          几番霜 几番雨
-          长风里的诗 咏尘世的别离
-          岂能忘 无声对望的你
-          就算天地颠倒
-          未动摇 我等你
-          一程风 一程泥
-          长空洒下雨 湿了迢迢归期
-          常眺望 隔山隔海的你
-          就算岁月无常
-          未动摇 我等你
-          盼着有风捎去
-          那一句 喜欢你
+          歌曲：{{item.mname}}
+          <br />音乐人：{{item.singer}}
+          <br />{{item.Thelyrics}}
         </p>
       </div>
       <div class="comment">
@@ -276,9 +246,45 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+        fid:"",
+        detail:[]
+    };
   },
-  methods: {},
+  watch:{
+  "$route.query.fid":function(){
+  this.fid=this.$route.query.fid;
+
+  }
+
+  },
+
+
+
+  created(){
+       
+         this.fid=this.$route.query.fid;
+     	this.axios.get("/musicdetail",{
+           params:{
+               fid:this.$route.query.fid
+           }
+
+         }).then(res=>{
+                 console.log(res.data)
+				this.detail=res.data;
+			}).catch(function(err){
+                console.log(err);
+
+            })
+
+
+  },
+
+
+  methods: {
+ 
+      
+  },
   components: {}
 };
 </script>
