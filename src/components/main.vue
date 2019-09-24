@@ -11,7 +11,55 @@
              午后红茶
          </div>
          </a>
+
+           <a href="" class="expheard-box">
+          <div class="b2"></div>
+          <img src="http://www.app-echo.com/v/dist-prod/images/655c7dbb2e8da175dd62f273119dcb07.jpg" alt="" class="">
+          <div class="text">
+             工作学习
+         </div>
+         </a>
+
+         
+           <a href="" class="expheard-box">
+          <div class="b3"></div>
+          <img src="http://www.app-echo.com/v/dist-prod/images/655c7dbb2e8da175dd62f273119dcb07.jpg" alt="" class="">
+          <div class="text">
+             深夜居酒屋
+         </div>
+         </a>
+
+          <a href="" class="expheard-box">
+          <div class="b4"></div>
+          <img src="http://www.app-echo.com/v/dist-prod/images/655c7dbb2e8da175dd62f273119dcb07.jpg" alt="" class="">
+          <div class="text">
+             周末聚会
+         </div>
+         </a>
+
+           <a href="" class="expheard-box">
+          <div class="b5"></div>
+          <img src="http://www.app-echo.com/v/dist-prod/images/655c7dbb2e8da175dd62f273119dcb07.jpg" alt="" class="">
+          <div class="text">
+             放松心情
+         </div>
+         </a>
+
+
+
+
+
+
         </div>
+
+
+        <!-- 热门榜单 -->
+    <my-hot></my-hot>
+
+
+
+
+
 
  <!-- 今日推荐 -->
         <div class="big-title">
@@ -20,12 +68,14 @@
 
            
         </div>
+        
         <ul class="morelist clearfix_after">
-            <li class="expmore-box">
+            <li class="expmore-box" v-for="item in music" :key="item.mid">
                 <div class="pic">
+                    <a href=""><img :src="item.img" alt=""></a>
                 </div>
-                 <a href="" class="song-name">aaaaa</a>
-                    <h4><a href="">aaaaa</a></h4>
+                 <a href="" class="song-name">{{item.mname}}</a>
+                    <h4><a href="">{{item.channel}}</a></h4>
                     
                     <ul class="status-list">
                         <li>
@@ -50,28 +100,36 @@
 
 
 <!-- 每日精选 -->
-      <div class="main-right ">
-       <h3>每日精选
+ <div class="main-right">
+<ul>
+
+    <li class="firstli">
+          <h3>每日精选
            <i class="play-all">播放全部</i>
        </h3>
-       
+    </li>
+    
+    <li v-for="item in music" :key="item.mid">
+        
        <div class="exlistening clearfix_after " >
-         <a href="#" >
+         <router-link to="/musicdetail?fid=3">
              <div class="pic">
-                  <img src="" alt="" >
+                  <img :src="item.img" alt="" >
              </div>
              <div class="hgroup">
-                 <h4>1111111111</h4>
-                 <h5>1111111111</h5>
+                 <h4>{{item.mname}}</h4>
+                 <h5>{{item.channel}}</h5>
              </div>
-         
 
-         </a>
+         </router-link>
 
        </div>
 
+    </li>
+</ul>
 
       </div>
+     
     
 
 
@@ -88,6 +146,8 @@
 
 
 <script>
+
+import hot from "@/subcomponents/hot.vue";
 export default {
   data() {
     return {
@@ -100,6 +160,7 @@ export default {
     },
   
  components :{
+     "my-hot":hot
 
 },
 created() {
@@ -129,7 +190,7 @@ created() {
  width: 1000px;
  height: 1500px;
  background-color: pink;
- margin: 0 auto
+ 
 }
 .main-left{
     float: left;
@@ -145,7 +206,7 @@ created() {
  background-color:rgb(212, 208, 208);
 
 }
-.main-right>h3{
+.main-right h3{
     font-size: 18px;
     height: 18px;
     line-height: 18px;
@@ -187,7 +248,7 @@ created() {
     float: left;
     width: 68px;
     height: 68px;
-    border: 1px solid red;
+  
 }
 .exlistening .pic>img{
     width: 68px;
@@ -229,6 +290,33 @@ created() {
     height: 150px;
     background: url(http://www.app-echo.com/v/dist-prod/images/3a9a80e2b2ba3c32b05f81fa7990215e.jpg) no-repeat;
 }
+.b2{
+     width: 100%;
+    height: 150px;
+    background: url(http://www.app-echo.com/v/dist-prod/images/655c7dbb2e8da175dd62f273119dcb07.jpg) no-repeat;
+}
+.b3{
+    
+    width: 100%;
+    height: 150px;
+    background: url(http://www.app-echo.com/v/dist-prod/images/da74a09d483c2e38a7e00dbebcf21ae2.jpg) no-repeat;
+
+
+}
+.b4{
+    width: 100%;
+    height: 150px;
+    background: url(http://www.app-echo.com/v/dist-prod/images/7334487124a8a7f7b70246172e2cb0f1.jpg) no-repeat;
+
+}
+.b5{
+    width: 100%;
+    height: 150px;
+    background: url(http://www.app-echo.com/v/dist-prod/images/c96ed94cf382a4b54f9f63c100cef7fa.png) no-repeat;
+
+}
+
+
 .expheard-box img{
     display: none;
     position: absolute;
@@ -294,6 +382,16 @@ created() {
     position: relative;
     height: 160px;
 }
+.expmore-box .pic img{
+     width: 160px;
+    height: 160px;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+
+
+
 .song-name{
      display: block;
     margin: 12px 15px 0;
