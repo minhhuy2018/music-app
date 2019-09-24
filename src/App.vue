@@ -34,6 +34,7 @@ body{
   background-color: rgb(221, 217, 217);
 }
 a{
+  cursor: pointer;
   text-decoration: none;
 }
 li{
@@ -42,6 +43,27 @@ li{
 input{
   outline: none;
 }
+
+
+
+.clearfix_after{zoom:1;}
+ 
+.clearfix_after:after{
+ 
+    content:"";
+ 
+    display:block;
+ 
+    height:0;
+ 
+    line-height:0;
+ 
+    clear:both;
+ 
+    visibility:hidden;
+ 
+}
+
 
 
 
