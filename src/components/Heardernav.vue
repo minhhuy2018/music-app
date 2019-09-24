@@ -7,7 +7,7 @@
       @select="handleSelect"
     >
       <el-menu-item index="1">
-        <a href="#" target="_blank">首页</a>
+        <router-link to="/">首页</router-link>
       </el-menu-item>
       <el-submenu index="2">
         <template slot="title">发现</template>
