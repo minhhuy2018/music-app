@@ -3,6 +3,10 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import reg from './views/Reg.vue'
 import login from './views/login'
+import main from '@/components/main.vue'
+import musicdetail from "@/components/musicdetail.vue";
+
+
 
 
 
@@ -26,6 +30,12 @@ export default new Router({
       path: '/login',
       component: login
     },
+    {
+      path: '/musicdetail',
+      component: musicdetail
+    },
+  
+  
   
     {
       path: '/about',
